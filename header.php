@@ -7,8 +7,10 @@
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	
 	<head>
+		<!-- Normal Header stuffs -->
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
 		
 		<title><?php bloginfo('name'); ?><?php wp_title('-', true, 'left'); ?></title>
 				
@@ -40,7 +42,10 @@
 
   		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/bootstrap.less">
   		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/responsive.less">
-
+        <meta name="description" content="To date, we have provided a physical space - at Penn State University - for people of different cultural and 
+        ancestral groups to meet and explore issues in small groups. We continue to do this in the real world, but now we are expanding into the virtual world.  Formally known as the Race Relations Project.">
+        <meta name="keywords" content="World in Conversation, Conversation, Dialog, Dialogue, Converse, Race Relations, A Tiny Act, Worldinconvo, Global Dialogue, Global, China, Israel, Haiti">
+        <meta name="author" content="World In Conversation">
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
@@ -81,6 +86,17 @@
 			} // end if search bar is used
 
 		?>
+		<!-- Google Analytics -->	
+			<script>
+  				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  				ga('create', 'UA-29115203-2', 'worldinconversation.org');
+  				ga('require', 'displayfeatures');
+  				ga('send', 'pageview');
+			</script>
 				
 	</head>
 	
@@ -92,21 +108,24 @@
 				
 				<div class="navbar navbar-fixed-top">
 					<div class="navbar-inner">
+						<div>
+							<a href="http://www.psu.edu/"><img class="alignleft" src="http://s9.postimage.org/za93tq567/PSUGrey.png" alt="Test Logo" alt width="140" height="65" /></a>
+						</div>
 						<div class="container-fluid nav-container">
-							<nav role="navigation">
-								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>/blog"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-header.png" alt="World In Conversation" /></a>
+								<nav role="navigation">
+									<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-header-2.png" alt="World In Conversation" /></a>
 								
-								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							        <span class="icon-bar"></span>
-							        <span class="icon-bar"></span>
-							        <span class="icon-bar"></span>
-								</a>
+									<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							        	<span class="icon-bar"></span>
+							        	<span class="icon-bar"></span>
+							        	<span class="icon-bar"></span>
+									</a>
 								
 								<div class="nav-collapse pull-right">
 									<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 								</div>
 								
-							</nav>
+								</nav>
 							
 							<?php if(of_get_option('search_bar', '1')) {?>
 							<form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
